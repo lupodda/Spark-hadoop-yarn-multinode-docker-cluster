@@ -1,0 +1,60 @@
+
+root
+ |-- Source Port: integer (nullable = true)
+ |-- Destination Port: integer (nullable = true)
+ |-- NAT Source Port: integer (nullable = true)
+ |-- NAT Destination Port: integer (nullable = true)
+ |-- Action: string (nullable = true)
+ |-- Bytes: integer (nullable = true)
+ |-- Bytes Sent: integer (nullable = true)
+ |-- Bytes Received: integer (nullable = true)
+ |-- Packets: integer (nullable = true)
+ |-- Elapsed Time (sec): integer (nullable = true)
+ |-- pkts_sent: integer (nullable = true)
+ |-- pkts_received: integer (nullable = true)
+
+
++-----------+----------------+---------------+--------------------+------+-----+----------+--------------+-------+------------------+---------+-------------+
+|Source Port|Destination Port|NAT Source Port|NAT Destination Port|Action|Bytes|Bytes Sent|Bytes Received|Packets|Elapsed Time (sec)|pkts_sent|pkts_received|
++-----------+----------------+---------------+--------------------+------+-----+----------+--------------+-------+------------------+---------+-------------+
+|      57222|              53|          54587|                  53| allow|  177|        94|            83|      2|                30|        1|            1|
+|      56258|            3389|          56258|                3389| allow| 4768|      1600|          3168|     19|                17|       10|            9|
+|       6881|           50321|          43265|               50321| allow|  238|       118|           120|      2|              1199|        1|            1|
+|      50553|            3389|          50553|                3389| allow| 3327|      1438|          1889|     15|                17|        8|            7|
+|      50002|             443|          45848|                 443| allow|25358|      6778|         18580|     31|                16|       13|           18|
+|      51465|             443|          39975|                 443| allow| 3961|      1595|          2366|     21|                16|       12|            9|
+|      60513|           47094|          45469|               47094| allow|  320|       140|           180|      6|                 7|        3|            3|
+|      50049|             443|          21285|                 443| allow| 7912|      3269|          4643|     23|                96|       12|           11|
+|      52244|           58774|           2211|               58774| allow|   70|        70|             0|      1|                 5|        1|            0|
+|      50627|             443|          16215|                 443| allow| 8256|      1674|          6582|     31|                75|       15|           16|
++-----------+----------------+---------------+--------------------+------+-----+----------+--------------+-------+------------------+---------+-------------+
+
+
+
++----------+-----+
+|    Action|count|
++----------+-----+
+|     allow|37640|
+|      deny|14987|
+|      drop|12851|
+|reset-both|   54|
++----------+-----+
+
+
+classification report:
+              precision    recall  f1-score   support
+
+         0.0       1.00      1.00      1.00     11441
+         1.0       1.00      1.00      1.00      4494
+         2.0       1.00      1.00      1.00      3795
+         3.0       0.80      0.29      0.42        14
+
+    accuracy                           1.00     19744
+   macro avg       0.95      0.82      0.85     19744
+weighted avg       1.00      1.00      1.00     19744
+
+confusion matrix
+[[11440     0     0     1]
+ [    7  4473    14     0]
+ [    0     0  3795     0]
+ [    0    10     0     4]]
