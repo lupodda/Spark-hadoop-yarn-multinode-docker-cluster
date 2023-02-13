@@ -1,4 +1,4 @@
-# Run ML classification algortthms with Spark on Hadoop inside docker container in Multi-Node Cluster mode
+# Run ML classification algorithms with Spark on Hadoop inside docker container in Multi-Node Cluster mode
 
 ## How to Run
 - Go to your terminal.
@@ -46,7 +46,6 @@
 - Upload files from docker master fils system on hdfs
 
 	```
-	
 	hdfs dfs -put log2.csv /
 
 	```
@@ -54,7 +53,6 @@
 - Spark submit in cluster mode
 
 	```
-	
 	spark-submit --master yarn --deploy-mode cluster --num-executors 1 --driver-memory 2g --executor-memory 512m --executor-cores 1 script.py 100
 
 	```
