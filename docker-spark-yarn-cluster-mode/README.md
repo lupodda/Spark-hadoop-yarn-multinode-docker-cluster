@@ -1,4 +1,4 @@
-# Run ML classification algorithms with Spark on Hadoop inside docker container in Multi-Node Cluster mode
+# PySpark ML algorithms on Hadoop file system and yarn resource manager in docker container in Multi-Node Cluster mode
 
 ## How to Run
 - Go to your terminal.
