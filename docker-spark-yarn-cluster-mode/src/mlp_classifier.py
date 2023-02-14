@@ -18,7 +18,8 @@ label_indexer = StringIndexer().setInputCol("Action").setOutputCol("label")
 label_indexer_model = label_indexer.fit(df)
 li_df = label_indexer_model.transform(df)
 
-assembler = VectorAssembler(inputCols=['Source Port', 'Destination Port', 'NAT Source Port', 'NAT Destination Port', 'Bytes', 'B>output = assembler.transform(li_df)
+assembler = VectorAssembler(inputCols=['Source Port', 'Destination Port', 'NAT Source Port', 'NAT Destination Port', 'Bytes', 'Bytes Sent', 'Bytes Received', 'Packets', 'Elapsed Time (sec)', 'pkts_sent', 'pkts_received'], outputCol='features')
+output = assembler.transform(li_df)
 
 model_df = output.select('features', 'label')
 
