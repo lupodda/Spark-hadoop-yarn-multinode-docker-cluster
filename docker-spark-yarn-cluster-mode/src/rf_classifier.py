@@ -24,7 +24,8 @@ model_df = output.select('features', 'label')
 
 df_train, df_test = model_df.randomSplit([0.7,0.3], seed = 42)
 
-df_classifier = RandomForestClassifier(labelCol="label", numTrees=10).fit(df_train)#DecisionTreeClassifier(labelCol='label').fit>df_predictions = df_classifier.transform(df_test)
+df_classifier = RandomForestClassifier(labelCol="label", numTrees=10).fit(df_train)
+df_predictions = df_classifier.transform(df_test)
 
 
 y_true = df_predictions.select(['label']).collect()
